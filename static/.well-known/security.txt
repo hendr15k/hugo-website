@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 Contact: https://www.gnuradio.org/about/security/
 Expires: 2027-12-31T23:59:59.000Z
 Preferred-Languages: en
 Canonical: https://www.gnuradio.org/.well-known/security.txt
+=======
+Contact: mailto:security@gnuradio.org
+Expires: 2027-01-25
+Preferred-Languages: en
+Canonical: https://gnuradio.org/.well-known/security.txt
+>>>>>>> upstream/master

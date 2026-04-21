@@ -1,32 +1,63 @@
 baseURL: 'https://www.gnuradio.org/'
 languageCode: en-us
 title: "GNU Radio"
-theme: gnuradio-bootstrap
+#theme: gnuradio-bootstrap
+theme: hugo-universal-theme
 description: GNU Radio Project
 permalink: 'https://www.gnuradio.org/'
-copyright: 'The GNU Radio Foundation, Inc. All rights reserved.'
+disablePathToLower: true
+enableRobotsTXT: true
 assetDir: assets/
-summaryLength: 20
+summaryLength: 50 # for news summary
 taxonomies:
   tag: tags
   category: categories
 preserveTaxonomyNames: true
 params:
+  # Notes
+  #  assets should never have been used for images, they go in static, according to hugo docs- The assets directory contains global resources typically passed through an asset pipeline. This includes resources such as images, CSS, Sass, JavaScript, and TypeScript. See details.
+  #  looks like we already included aliasesa in the blog/news posts, just make sure they work, so old blogs urls arent broke
+  copyright: '©2024 Radio project. All rights reserved.'
+  date_format: January 2, 2006
+  disabled_logo: false
+  logo_text: GNU Radio
+  logo: gnuradio_logo_glyphs_as_paths.svg
+  logo_small: gnuradio_logo_glyphs_as_paths.svg
+  recent_posts:
+    enable: true
+    title: Recent News
+    subtitle:
+  footer:
+    recent_posts:
+      enable: false
+  see_more:
+    enable: true
+    image: gr_web.svg
+    title: Learn how to use GNU Radio
+    subtitle:
+    link_url: https://wiki.gnuradio.org/index.php/Tutorials
+    link_text: Check out our tutorials
+  clients:
+    enable: false
+    # All clients are defined in their own files. You can find example items at 'exampleSite/data/clients'. For more information take a look at the README.
+    title: GNU Radio is Used By
+    subtitle: Email marc@gnuradio.org to have your organization included
+  CarouselCustomers: # used for clients section
+    items: 6 # per page
+    auto_play: true
+    slide_speed: 1000 # doesnt seem to change anything
+    pagination_speed: 1000 # animation time
   navbarBgColorClass: navbar-dark bg-dark
   secondarynavbarBgColorClass: navbar-dark bg-dark
   twitter: gnuradio
-  carousel:
+  carouselHomepage:
     enable: true
+    auto_play: true
+    slide_speed: 1000 # doesnt seem to change anything
+    pagination_speed: 1000 # animation time
   defaults:
     imgurl: imgs/fosphor.jpg
     thumbnail: imgs/gr_web.svg
-  thumbnails:
-    default: imgs/gr_web.svg
-    gsoc: imgs/gsoc.png
-    conference: imgs/conference_web.svg
-    gr_release: imgs/gr_release_web.svg
-    volk_release: imgs/volk_release_web.svg
-    pybombs_release: imgs/pybombs_release_web.svg
 outputs:
   home:
     - html
@@ -38,60 +69,201 @@ menu:
   main:
     - identifier: about
       name: About
-      weight: -110
-    - identifier: about_GR
-      name: GNU Radio
+      weight: 10
+    - identifier: about_gr
+      name: About GNU Radio
       url: /about/
       parent: about
-      weight: -100
+      weight: 10
     - identifier: about_org
       name: Leadership
-      url: /about/organization/
+      url: /leadership/
       parent: about
-      weight: -99
-    - identifier: blog
-      name: Blog
-      url: /blog/
-      weight: -109
-    - identifier: news
+      weight: 20
+#        
+    - identifier: articles
       name: News
+      weight: 2
       url: /news/
-      weight: -108
+#
     - identifier: docs
       name: Documentation
-      url: /docs/
-      weight: -107.5
+      weight: 40
+    - name: Installation
+      url: https://wiki.gnuradio.org/index.php/InstallingGR
+      weight: 10
+      parent: docs
+    - name: 📖 Tutorials
+      url: https://wiki.gnuradio.org/index.php/Tutorials
+      weight: 20
+      parent: docs
+    - name: Block Documentation
+      url: https://wiki.gnuradio.org/index.php?title=Category:Block_Docs
+      weight: 30
+      parent: docs
+#
     - identifier: events
       name: Events
-      weight: -107
-    - identifier: events_grcon_18
-      name: GNU Radio Conference 2018
-      url: /grcon/grcon18/
+      weight: 48
+    - identifier: events_grcon_26
+      name: GNU Radio Conference 2026
+      url: https://events.gnuradio.org/e/grcon26
       parent: events
-      weight: -100
+      weight: 49            
+    - identifier: events_grcon_25
+      name: GNU Radio Conference 2025
+      url: https://events.gnuradio.org/e/grcon25
+      parent: events
+      weight: 50      
+    - identifier: events_grcon_24
+      name: GNU Radio Conference 2024
+      url: https://events.gnuradio.org/e/grcon24
+      parent: events
+      weight: 51
+    - identifier: events_grcon_23
+      name: GNU Radio Conference 2023
+      url: https://events.gnuradio.org/e/grcon23
+      parent: events
+      weight: 52
     - identifier: events_grcon
       name: Previous GNU Radio Conferences
-      url: /grcon/
+      url: https://wiki.gnuradio.org/index.php/GNURadioConference
       parent: events
-      weight: -95
-    - identifier: events_other
-      name: Other events
-      url: /events/
-      parent: events
-      weight: -90
-    - name: getting started
-      url: /getting-started/
-      weight: -100
+      weight: 53
+#
+    - identifier: community
+      name: Community
+      weight: 80
+    - identifier: contact
+      name: Get in Touch & Get Involved
+      url: /community/
+      weight: 10
+      parent: community
+    - identifier: source
+      name: Work on the Source Code
+      url: https://github.com/gnuradio/gnuradio
+      weight: 20
+      parent: community
+    - identifier: gsoc
+      name: "GSoC '24"
+      url: /gsoc/
+      weight: 90
+      parent: community
+#
+    - identifier: donate
+      name: Donate
+      url: https://gift.idonate.com/seti/GNURadio
+      weight: 100
+  grcon/grcon17:
+    - identifier: grcon17
+      name: GRCon17
+      url: /grcon/grcon17
+      weight: 10
+    - identifier: presentations
+      name: Presentations
+      url: /grcon/grcon17/presentations
+      weight: 20
   grcon/grcon18:
     - identifier: grcon18
       name: GRCon18
       url: /grcon/grcon18
-      weight: -200
+      weight: 10
     - identifier: presentations
       name: Presentations
       url: /grcon/grcon18/presentations
-      weight: -100
-    - identifier: content
-      name: Content
-      url: /grcon/grcon18/content
-      weight: 0
+      weight: 20
+  grcon/grcon19:
+    - identifier: grcon19
+      name: GRCon19
+      url: /grcon/grcon19
+      weight: 10
+    - identifier: about
+      name: About
+      url: /grcon/grcon19/about
+      weight: 20
+    - identifier: schedule
+      name: Schedule
+      url: https://openconf.org/GRCon19/modules/request.php?module=oc_program&action=program.php&p=program
+      weight: 25
+    - identifier: presentations
+      name: Presentations
+      url: /grcon/grcon19/presentations
+      weight: 30
+    - identifier: students
+      name: Students
+      url: /grcon/grcon19/students
+      weight: 40
+    - identifier: sponsors
+      name: Sponsors
+      url: /grcon/grcon19/sponsors
+      weight: 60
+    - identifier: coc
+      name: Code of Conduct
+      url: /grcon/grcon19/coc
+      weight: 70
+  grcon/grcon20:
+    - identifier: grcon20
+      name: GRCon20
+      url: /grcon/grcon20
+      weight: 10
+    - identifier: about
+      name: About
+      url: /grcon/grcon20/about
+      weight: 20
+    - identifier: schedule
+      name: Schedule
+      url: https://www.openconf.org/GRCon20/modules/request.php?module=oc_program&action=program.php&p=program
+      weight: 25
+    #- identifier: presentations
+      #name: Presentations
+      #url: /grcon/grcon20/presentations
+      #weight: 30
+    - identifier: workshops
+      name: Workshops
+      url: /grcon/grcon20/workshops
+      weight: 35
+    - identifier: expos
+      name: Expos
+      url: /grcon/grcon20/expos
+      weight: 40
+    - identifier: sponsors
+      name: Sponsors
+      url: /grcon/grcon20/sponsors
+      weight: 60
+    - identifier: coc
+      name: Code of Conduct
+      url: /grcon/grcon20/coc
+      weight: 70
+  grcon/grcon21:
+    - identifier: grcon21
+      name: GRCon21
+      url: /grcon/grcon21
+      weight: 10
+    - identifier: about
+      name: About
+      url: /grcon/grcon21/about
+      weight: 20
+    #- identifier: schedule
+      #name: Schedule
+      #url: https://pretalx.gnuradio.org/grcon20
+      #weight: 25
+    #- identifier: presentations
+      #name: Presentations
+      #url: /grcon/grcon20/presentations
+      #weight: 30
+    - identifier: submit
+      name: CfP
+      url: https://events.gnuradio.org/event/8/abstracts/
+      weight: 35
+    - identifier: students
+      name: Students
+      url: /grcon/grcon21/students
+      weight: 40
+    - identifier: sponsors
+      name: Sponsors
+      url: /grcon/grcon21/sponsors
+      weight: 60
+    - identifier: coc
+      name: Code of Conduct
+      url: /grcon/grcon21/coc
+      weight: 70

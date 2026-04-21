@@ -2,9 +2,15 @@
 
 ## Install Prequisites
 
-To render the GNU Radio website a recent (https://gohugo.io)[hugo] installation in the extended mode is required.
-If you already have a go environment setup and you are familiar with `go get`. The easiest way to get `hugo` in the required version: `go get ---tags extended -u github.com/gohugoio/hugo/`.
+To render the GNU Radio website a recent [hugo](https://gohugo.io) installation in the "extended" mode is required.  To install hugo on your system choose from one of the following options:
 
+1. If you already have `go get` set up, the easiest way to get `hugo` in the required version is: `go get --tags extended -u github.com/gohugoio/hugo/`.
+2. Download and install hugo [from one of their releases](https://github.com/gohugoio/hugo/releases), make sure to download the "hugo_extended_XXXX" file for your OS.  The latest version should work, at the time of writing this it is 0.73.  Either install it, or unpack and put the binary in your path.  On Ubuntu this process can be done with:
+   * `cd ~/Downloads`
+   * `wget https://github.com/gohugoio/hugo/releases/download/v0.73.0/hugo_extended_0.73.0_Linux-64bit.deb`
+   * `sudo dpkg -i hugo_extended_0.73.0_Linux-64bit.deb`
+
+Avoid using the hugo packaged by your distro, their version of hugo is likely not the "extended" variant.
 
 ## Run local development version
 
@@ -20,20 +26,20 @@ new version.
 This website uses the Hugo static site generator. Its documentation can be
 found here: https://gohugo.io/documentation/
 
-### How to add a news item
+### How to add a news or blog article
 
-If you have Hugo running, simply run
+If you have Hugo installed in a reachable path, simply run
 
     hugo new content/news/2018-XX-XX-short-title.md
 
-and it will create a template for new. Alternatively, copy an old news item (if
-you don't have Hugo running) and modify it accordingly.
+or
+
+    hugo new content/blog/2018-XX-XX-short-title.md
+
+and it will create a template for a new article on the news or blog page. Alternatively, copy an old news or blog item (if you don't have Hugo running) and modify it accordingly.
 
 Before submitting a pull request, make sure to remove the `draft: true` line
 from the file.
-
-### How to add a blog article
-
 
 ### How to add a topic to the splash screen on the greeting page (the carousel)
 
@@ -44,5 +50,3 @@ give you different content.
 
 To add one of those, or to change the order, go to `data/carousel` and add
 another TOML file. The order is determined by the weight.
-
-

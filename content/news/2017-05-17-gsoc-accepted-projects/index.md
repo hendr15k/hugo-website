@@ -3,9 +3,9 @@ title: "GSOC 2017 Accepted Projects"
 author: "Ben Hilburn"
 date: "2017-05-17"
 sponsored: "None"
-aliases: ["news/gsoc-2017-accepted-projects"]
+aliases: ["/news/gsoc-2017-accepted-projects"]
 categories: ["gsoc"]
-thumbnail: "gsoc"
+banner: gsoc.png
 ---
 
 # GSOC 2017 Accepted Projects

@@ -1,19 +1,24 @@
 version: 2.0
 jobs:
   build:
+    branches:
+      only:
+        - master
     docker:
-      - image: gnuradio/hugo:latest
+      - image: hugomods/hugo:exts-0.124.1
     steps:
+      - run: 'apk update'
+      - run: 'apk add openssh-client'
       - run: 'eval $(ssh-agent -s)'
       - add_ssh_keys:
           fingerprints:
-            - "4c:3f:96:5d:63:cd:34:dd:7e:67:26:52:f9:80:a0:73"
+            - "70:19:81:46:7b:d3:c9:76:71:b9:87:f6:ff:59:9e:b2"
       - run: 'mkdir -p ~/.ssh'
       - run: 'chmod 700 ~/.ssh'
       - run: 'echo "$KNOWN_HOSTS" > ~/.ssh/known_hosts'
       - run: 'chmod 644 ~/.ssh/known_hosts'
       - checkout
       - run: 'hugo version'
-      - run: 'hugo -b https://test.gnuradio.org/ --minify --noTimes'
+      - run: 'hugo -b https://www.gnuradio.org/ --minify --noTimes'
       - run: 'echo $(date +%Y.%m.%d)'
-      - run: 'tar -cz public | ssh $SSH_USER@$SSH_HOST "mkdir -p /data/static/test.gnuradio.org/$(date +%Y.%m.%d); cd /data/static/test.gnuradio.org/$(date +%Y.%m.%d); tar --strip-components=1 -xz; rm -I /data/static/test.gnuradio.org/live; cd /data/static/test.gnuradio.org; ln -sf $(date +%Y.%m.%d) live;"'
+      - run: 'tar -cz public | ssh $SSH_USER@$SSH_HOST "mkdir -p /www/$(date +%Y.%m.%d); cd /www/$(date +%Y.%m.%d); tar --strip-components=1 -xz; rm /www/live; cd /www; ln -sf $(date +%Y.%m.%d) live;"'

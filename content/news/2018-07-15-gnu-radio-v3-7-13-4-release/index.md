@@ -3,9 +3,9 @@ title: "GNU Radio v3.7.13.4 Release"
 author: "Marcus Müller"
 date: "2018-07-15"
 sponsored: "0"
-aliases: ["news/gnu-radio-v3-7-13-4-release"]
+aliases: ["/news/gnu-radio-v3-7-13-4-release"]
 categories: ["release"]
-thumbnail: "gr_release"
+banner: gr_release_web.svg
 ---
 Dear Community,
 

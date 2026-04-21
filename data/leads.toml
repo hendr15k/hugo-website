@@ -1,63 +1,85 @@
 [[officers]]
-    title = "Project Lead, Foundation President"
-    name = "Ben Hilburn"
-    email = "bhilburn@gnuradio.org"
-    twitter = "@bhilburn"
-    website = "http://hokietux.net/"
+    title = "<President>"
+    name = "Josh Morman"
+    twitter = "@_mormj"   
+    email = "jmorman@gnuradio.org"
 [[officers]]
-    title = "Community Manager, PyBOMBS Maintainer, Foundation Officer"
-    name = "Martin Braun"
-    email = "mbraun@gnuradio.org"
-    twitter = "@braun_noise"
+    title = "<Vice President>"
+    name = "Marc Lichtman"
+    website = "https://www.pysdr.org"
 [[officers]]
-    title = "GNU Radio Maintainer & Officer"
+    title = "<VP/Architect>"
     name = "Marcus Müller"
     email = "mmueller@gnuradio.org"
+    twitter = "@dEnergy_dTime"    
 [[officers]]
-    title = "VOLK Maintainer & Officer"
-    name = "Nathan West"
+    title = "<SETI PI>"
+    name = "Derek Kozel"
 [[officers]]
-    title = "DevOps Admin & Officer"
+    title = ""
+    name = "Martin Braun"
+    email = "mbraun@gnuradio.org"
+    twitter = "@braun_noise"     
+[[officers]]
+    title = ""
     name = "Andrej Rode"
     email = "arode@gnuradio.org"
     twitter = "@noc0lour"
 [[officers]]
-    title = "Officer"
+    title = ""
     name = "Bastian Bloessl"
     twitter = "@bastibl"
-    website= "https://www.bastibl.net"
+    website = "https://www.bastibl.net"
 [[officers]]
-    title = "Officer"
-    name = "Derek Kozel"
+    title = ""
+    name = "Johannes Demel"
 [[officers]]
-    title = "Officer"
+    title = "<Maintainer>"
+    name = "Jeff Long"
+
+[[officers]]
+    title = ""
     name = "Nate Temple"
 [[officers]]
-    title = "Officer"
+    title = ""
     name = "Philip Balister"
 [[officers]]
-    title = "Documentation, Wiki, CGRAN Maintainer & Officer"
-    name = "Marc Lichtman"
+    title = ""
+    name = "Samantha Palazzolo"
 [[officers]]
-    title = "GNU Radio in Education Advocate & Officer"
-    name = "Richard Prestage"
+    title = ""
+    name = "Jacob Gilbert"
+[[officers]]
+    title = ""
+    name = "Jean-Michel Friedt"
+[[officers]]
+    title = ""
+    name = "Ben McCall"
+[[officers]]
+    title = ""
+    name = "John Sallay"
+[[officers]]
+    title = ""
+    name = "Seth Hitefield"
 
-[[packaging]]
-    target = "Debian/Ubuntu"
-    name = "Maitland Bottoms"
-[[packaging]]
-    target = "macOS"
-    name = "Michael Dickens"
-[[packaging]]
-    target = "Archlinux"
-    name = "Kyle Keen"
-[[packaging]]
-    target = "Gentoo"
-    name = "Rick Farina"
+[[tech]]
+    title = "GNU Radio Maintainer (3.X)"
+    name = "Jeff Long"
+[[tech]]
+    title = "GNU Radio 4.0 Runtime Lead"
+    name = "Basti Blössl and Josh Morman"
+[[tech]]
+    title = "Documentation Lead"
+    name = "Marc Lichtman"
+[[tech]]
+    title = "Infrastructure Maintainer"
+    name = "Andrej Rode"
+[[tech]]
+    title = "CI/CD Maintainer"
+    name = "Andrej Rode"
+[[tech]]
+    title = "VOLK Maintainer"
+    name = "Johannes Demel and Michael Dickens"
 
-[[advisors]]
-    name = "Jonathan Corgan"
-[[advisors]]
-    name = "Matt Ettus"
-[[advisors]]
-    name = "Tim O'Shea"
+
+
